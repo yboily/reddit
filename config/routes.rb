@@ -1,6 +1,11 @@
 Reddit::Application.routes.draw do
   devise_for :users
-  resources :links
+  resources :links do
+    member do
+      put "Like", to: "Links#upvote"
+      put "dislike", to: "Links#downvote"
+    end
+  end
 
   root to: "links#index"
 
