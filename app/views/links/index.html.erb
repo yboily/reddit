@@ -3,7 +3,9 @@
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %><br>
+  <% if false %>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
+  <% end %>
     </h2>
 
     <div class="btn-group">
